@@ -1,24 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
-    <title>가보고 싶은 나라</title>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <title>리스트 아이템 색상</title>
     <style>
       ul {
-        background: aliceblue;
+        list-style-type: none;
+        padding: 0;
       }
-      li:hover {
-        background: yellowgreen;
+
+      li {
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        color: #333;
+        font-family: Arial, sans-serif;
+      }
+
+      .item-1 {
+        background-color: #d8e8e4;
+      }
+
+      .item-2 {
+        background-color: #f1e3dd;
+      }
+
+      .item-3 {
+        background-color: #e8e8a6;
+      }
+
+      .item-4 {
+        background-color: #e4d8e8;
+      }
+
+      .item-5 {
+        background-color: #d8e4e8;
       }
     </style>
   </head>
   <body>
-    <h3>가보고 싶은 나라</h3>
+    <h1>리스트 아이템 색상</h1>
     <hr />
-    <ul type="square">
-      <li>프랑스</li>
-      <li>독일</li>
-      <li>칠레</li>
+
+    <ul>
+      <li class="item-1">아이템 1</li>
+      <li class="item-2">아이템 2</li>
+      <li class="item-3">아이템 3</li>
+      <li class="item-4">아이템 4</li>
+      <li class="item-5">아이템 5</li>
     </ul>
   </body>
 </html>

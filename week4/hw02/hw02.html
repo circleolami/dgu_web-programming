@@ -1,28 +1,18 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hovering</title>
-    <style>
-      .hover-box {
-        width: 200px;
-        height: 200px;
-        background-color: lightblue;
-        text-align: center;
-        line-height: 200px;
-        margin: 20px;
-        transition: background-color 0.3s, color 0.3s;
-        font-family: Arial, sans-serif;
-      }
-
-      .hover-box:hover {
-        background-color: lightcoral;
-        color: white;
-      }
-    </style>
+    <title>로그인 폼 만들기</title>
   </head>
   <body>
-    <div class="hover-box">마우스를 올려보세요</div>
+    <h3>로그인 폼</h3>
+    <hr />
+    <form>
+      <fieldset>
+        <legend>Login</legend>
+        <label> Username <input type="Username" /> </label>
+        <label> Passward <input type="Passward" /> </label>
+      </fieldset>
+    </form>
   </body>
 </html>

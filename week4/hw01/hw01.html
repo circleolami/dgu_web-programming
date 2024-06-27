@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="kr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>웹사이트 방문</title>
-    <style>
-      a:link {
-        color: blue;
-        text-decoration: none;
-      }
-
-      a:visited {
-        color: purple;
-      }
-
-      a:hover {
-        color: red;
-        text-decoration: underline;
-      }
-
-      a:active {
-        color: yellow;
-      }
-    </style>
+    <title>Button Example</title>
   </head>
   <body>
-    <h1>웹사이트 방문</h1>
+    <button onclick="buttonClicked()">버튼을 클릭하세요</button>
 
-    <a href="https://www.naver.com" target="_blank">네이버</a><br />
-    <a href="https://www.google.com" target="_blank">구글</a>
+    <script>
+      function buttonClicked() {
+        alert("버튼이 클릭되었습니다");
+      }
+    </script>
   </body>
 </html>

@@ -2,36 +2,23 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>X축 진동</title>
+    <title>넘치는 파도</title>
     <style>
       .image-container {
+        background-color: skyblue;
+        background-size: 100px 100px;
+        background-image: url("ocean.jpg");
+        background-repeat: repeat-y;
+        background-position: center center;
         width: 300px;
         height: 300px;
-        margin: 50px auto;
-        overflow: hidden;
-      }
-
-      .animated-image {
-        width: 100%;
-        height: 100%;
-        animation: moveImage 5s infinite alternate;
-      }
-
-      @keyframes moveImage {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(100%);
-        }
+        border-radius: 15px;
       }
     </style>
   </head>
   <body>
-    <h1>X축 진동</h1>
-    <div class="image-container">
-      <img src="image.png" alt="Animated Image" class="animated-image" />
-    </div>
+    <h3>넘치는 파도</h3>
+    <hr />
+    <div class="image-container"></div>
   </body>
 </html>

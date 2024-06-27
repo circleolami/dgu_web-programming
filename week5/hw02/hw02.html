@@ -2,52 +2,27 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>리스트 아이템 색상</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hovering</title>
     <style>
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-
-      li {
-        padding: 10px;
-        margin: 5px 0;
-        border-radius: 5px;
-        color: #333;
+      .hover-box {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        text-align: center;
+        line-height: 200px;
+        margin: 20px;
+        transition: background-color 0.3s, color 0.3s;
         font-family: Arial, sans-serif;
       }
 
-      .item-1 {
-        background-color: #d8e8e4;
-      }
-
-      .item-2 {
-        background-color: #f1e3dd;
-      }
-
-      .item-3 {
-        background-color: #e8e8a6;
-      }
-
-      .item-4 {
-        background-color: #e4d8e8;
-      }
-
-      .item-5 {
-        background-color: #d8e4e8;
+      .hover-box:hover {
+        background-color: lightcoral;
+        color: white;
       }
     </style>
   </head>
   <body>
-    <h1>리스트 아이템 색상</h1>
-    <hr />
-
-    <ul>
-      <li class="item-1">아이템 1</li>
-      <li class="item-2">아이템 2</li>
-      <li class="item-3">아이템 3</li>
-      <li class="item-4">아이템 4</li>
-      <li class="item-5">아이템 5</li>
-    </ul>
+    <div class="hover-box">마우스를 올려보세요</div>
   </body>
 </html>

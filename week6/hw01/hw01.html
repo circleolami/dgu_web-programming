@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display 속성</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-around;
+        border: 2px solid #000;
+        padding: 10px;
+        background-color: #f0f0f0;
+      }
+
+      .item {
+        background-color: lightblue;
+        padding: 20px;
+        border: 2px solid blue;
+        border-radius: 10px;
+        text-align: center;
+        width: 100px;
+      }
+
+      .inline-box {
+        display: inline-block;
+        background-color: lightgreen;
+        padding: 20px;
+        border: 2px solid green;
+        border-radius: 5px;
+        margin: 5px;
+      }
+
+      .block-box {
+        display: block;
+        background-color: lightcoral;
+        padding: 20px;
+        border: 2px solid red;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Display 속성</h1>
+    <hr />
+
+    <div class="container">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+
+    <div class="inline-box">인라인 박스 1</div>
+    <div class="inline-box">인라인 박스 2</div>
+
+    <div class="block-box">블록 박스 1</div>
+    <div class="block-box">블록 박스 2</div>
+  </body>
+</html>

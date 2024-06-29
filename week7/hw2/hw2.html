@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>숫자 맞추기 게임</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .container {
+        background-color: #fff;
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+      }
+      h1 {
+        color: #333;
+      }
+      .input-group {
+        margin-bottom: 20px;
+        text-align: left;
+      }
+      .input-group input[type="number"] {
+        width: calc(100% - 12px);
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      .result {
+        margin-top: 20px;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>숫자 맞추기 게임 <br />(1에서 10)</h1>
+      <button onclick="startGame()">게임 시작</button>
+      <div class="result" id="result"></div>
+    </div>
+
+    <script>
+      let randomNumber;
+      let attempts = 0;
+
+      function startGame() {
+        randomNumber = Math.floor(Math.random() * 10) + 1;
+        playGame();
+      }
+
+      function playGame() {
+        let guess = prompt("1에서 10 사이의 숫자를 맞춰보세요:");
+
+        if (guess === null || guess === "") {
+          document.getElementById("result").innerHTML =
+            "게임이 취소되었습니다.";
+        } else {
+          guess = parseInt(guess);
+
+          if (isNaN(guess) || guess < 1 || guess > 10) {
+            document.getElementById("result").innerHTML =
+              "1에서 10 사이의 숫자를 입력하세요.";
+          } else {
+            attempts++;
+
+            if (guess === randomNumber) {
+              document.getElementById(
+                "result"
+              ).innerHTML = `축하합니다! ${randomNumber}를 ${attempts}번 만에 맞췄습니다!`;
+            } else if (guess < randomNumber) {
+              document.getElementById("result").innerHTML =
+                "너무 작습니다! 다시 시도해보세요.";
+              setTimeout(playGame, 1000); // 1초 후 다시 입력 받기
+            } else {
+              document.getElementById("result").innerHTML =
+                "너무 큽니다! 다시 시도해보세요.";
+              setTimeout(playGame, 1000); // 1초 후 다시 입력 받기
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+/* 태그 이름 선택자 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+/* 아이디 선택자 */
+#header {
+  background-color: #444;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+/* 클래스 선택자 */
+.form-container {
+  background-color: white;
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="hw2.css" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>회원가입</h2>
+      <form action="#">
+        <label for="user-id">사용자 ID:</label>
+        <input type="text" id="user-id" name="user-id" required />
+
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required />
+
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label>성별:</label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">여성</label><br />
+
+        <label for="region">지역:</label><br />
+        <input type="checkbox" id="seoul" name="region" value="seoul" />
+        <label for="seoul">서울</label>
+        <input type="checkbox" id="busan" name="region" value="busan" />
+        <label for="busan">부산</label><br />
+
+        <label for="department">부서:</label>
+        <select id="department" name="department">
+          <option value="sales">영업</option>
+          <option value="hr">인사</option>
+          <option value="it">IT</option>
+        </select>
+
+        <label for="phone">전화번호:</label>
+        <input type="text" id="phone" name="phone" />
+
+        <label for="address">주소:</label>
+        <input type="text" id="address" name="address" />
+
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="intro">자기소개:</label>
+        <textarea id="intro" name="intro" rows="5"></textarea>
+
+        <button type="submit">가입하기</button>
+      </form>
+    </div>
+  </body>
+</html>

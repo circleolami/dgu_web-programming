@@ -2,138 +2,85 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>사칙연산</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>그리드 레이아웃 및 애니메이션</title>
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #c1e1c5; /* 연두색 배경 */
-        text-align: center;
-        margin-top: 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
         margin: 0;
+        padding: 0;
       }
       .container {
-        background-color: #fffff0; /* 아이보리색 박스 */
-        width: 350px; /* 너비 500px */
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
         padding: 20px;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #f4f4f4;
       }
-      h1 {
-        color: #333;
+      .box {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ddd;
+        text-align: center;
+        transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
-      .input-group {
-        margin-bottom: 20px;
-        text-align: left;
+      .box:hover {
+        background-color: #f0f0f0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
       }
-      .input-group label {
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
+      .box:active {
+        transform: scale(1.1);
       }
-      .input-group input[type="number"],
-      .input-group select {
-        width: calc(100% - 12px);
-        padding: 6px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
+      .box img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
       }
-      .input-group select {
-        width: 100%;
-        padding: 6px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
+      .box p {
+        margin: 10px 0 0;
       }
-      .input-group .operator-button {
-        width: 80px; /* 버튼 너비 고정 */
-        margin-right: 5px; /* 버튼 간 여백 */
-        padding: 10px;
-        background-color: #ccc; /* 연한 회색 */
-        border: none;
-        border-radius: 4px;
-        color: #333;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+      @media (max-width: 800px) {
+        .container {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
       }
-      .input-group .operator-button:hover {
-        background-color: #bbb; /* 회색 버튼 호버 시 색 변화 */
-      }
-      .input-group .operator-button:last-child {
-        margin-right: 0; /* 마지막 버튼의 오른쪽 여백 제거 */
-      }
-      .result {
-        margin-top: 20px;
-        background-color: #f9f9f9;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 18px;
+      @media (max-width: 600px) {
+        .container {
+          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
       }
     </style>
   </head>
   <body>
+    <h3>반응형 그리드 레이아웃 및 애니메이션</h3>
+    <hr />
     <div class="container">
-      <h1>사칙연산</h1>
-      <div class="input-group">
-        <label for="number1">첫 번째 숫자를 입력하세요:</label>
-        <input type="number" id="number1" placeholder="첫 번째 숫자" required />
+      <div class="box">
+        <img src="./1.jpg" alt="Placeholder Image" />
+        <p>Box 1</p>
       </div>
-      <div class="input-group">
-        <label>연산자를 선택하세요:</label>
-        <button class="operator-button" onclick="setOperator('+')">+</button>
-        <button class="operator-button" onclick="setOperator('-')">-</button>
-        <button class="operator-button" onclick="setOperator('*')">*</button>
-        <button class="operator-button" onclick="setOperator('/')">/</button>
+      <div class="box">
+        <img src="./2.jpg" alt="Placeholder Image" />
+        <p>Box 2</p>
       </div>
-      <div class="input-group">
-        <label for="number2">두 번째 숫자를 입력하세요:</label>
-        <input type="number" id="number2" placeholder="두 번째 숫자" required />
+      <div class="box">
+        <img src="./3.jpg" alt="Placeholder Image" />
+        <p>Box 3</p>
       </div>
-      <button onclick="calculate()">계산하기</button>
-      <div class="result" id="result"></div>
+      <div class="box">
+        <img src="./4.jpg" alt="Placeholder Image" />
+        <p>Box 4</p>
+      </div>
+      <div class="box">
+        <img src="./5.jpg" alt="Placeholder Image" />
+        <p>Box 5</p>
+      </div>
+      <div class="box">
+        <img src="./6.jpg" alt="Placeholder Image" />
+        <p>Box 6</p>
+      </div>
     </div>
-
-    <script>
-      let selectedOperator = "";
-
-      function setOperator(operator) {
-        selectedOperator = operator;
-      }
-
-      function calculate() {
-        let number1 = parseFloat(document.getElementById("number1").value);
-        let number2 = parseFloat(document.getElementById("number2").value);
-        let result;
-
-        switch (selectedOperator) {
-          case "+":
-            result = number1 + number2;
-            break;
-          case "-":
-            result = number1 - number2;
-            break;
-          case "*":
-            result = number1 * number2;
-            break;
-          case "/":
-            result = number1 / number2;
-            break;
-          default:
-            document.getElementById("result").innerHTML =
-              "연산자를 선택하세요.";
-            return;
-        }
-
-        document.getElementById("result").innerHTML = `
-            <p>결과: ${number1} ${selectedOperator} ${number2} = ${result}</p>
-        `;
-      }
-    </script>
   </body>
 </html>

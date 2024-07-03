@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.photo {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.photo img {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.photo:hover img {
+  transform: scale(1.1);
+}

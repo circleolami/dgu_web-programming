@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>자바스크립트 배열과 함수 활용</title>
+  </head>
+  <body>
+    <h3>자바스크립트 예제</h3>
+    <hr />
+    <script>
+      let numbers = [];
+      for (let i = 0; i < 5; i++) {
+        let num = prompt("숫자를 입력하세요", "0");
+        numbers.push(parseInt(num));
+      }
+
+      function sumArray(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+
+      let total = sumArray(numbers);
+      document.write("입력된 숫자: " + numbers.join(", ") + "<br>");
+      document.write("숫자의 총합: " + total);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>다이얼로그 활용</title>
+    <script>
+      function getUserInfo() {
+        let name = prompt("이름을 입력하세요", "홍길동");
+        if (name == null || name.trim() === "") {
+          alert("이름을 입력하지 않았습니다.");
+          return;
+        }
+
+        let age;
+        while (true) {
+          age = prompt("나이를 입력하세요", "20");
+          age = parseInt(age);
+          if (!isNaN(age) && age > 0) {
+            break;
+          }
+          alert("유효한 나이를 입력하세요.");
+        }
+
+        let ageCategory = age >= 20 ? "성인" : "미성년자";
+        document.getElementById(
+          "userInfoOutput"
+        ).innerHTML = `안녕하세요, ${name}님!<br>나이: ${age}세 (${ageCategory})`;
+      }
+    </script>
+  </head>
+  <body>
+    <h3>이름 및 나이 입력 프로그램</h3>
+    <hr />
+    <button onclick="getUserInfo()">이름 및 나이 입력</button>
+    <div id="userInfoOutput"></div>
+  </body>
+</html>

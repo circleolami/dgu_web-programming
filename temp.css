@@ -1,4 +1,5 @@
 body {
+  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,23 +8,24 @@ body {
   background-color: #f0f0f0;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+.container {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.photo {
-  overflow: hidden;
-  position: relative;
+button {
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #17a2b8;
+  color: white;
 }
 
-.photo img {
-  width: 100%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.photo:hover img {
-  transform: scale(1.1);
+button:hover {
+  background-color: #117a8b;
 }

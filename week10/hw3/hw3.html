@@ -1,67 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
-    <meta charset="utf-8" />
-    <title>계산기 프로그램</title>
-    <script>
-      let history = [];
-
-      function calculate() {
-        let num1 = parseFloat(document.getElementById("num1").value);
-        let num2 = parseFloat(document.getElementById("num2").value);
-        let operation = document.getElementById("operation").value;
-        let result;
-
-        switch (operation) {
-          case "+":
-            result = num1 + num2;
-            break;
-          case "-":
-            result = num1 - num2;
-            break;
-          case "*":
-            result = num1 * num2;
-            break;
-          case "/":
-            if (num2 !== 0) {
-              result = num1 / num2;
-            } else {
-              alert("0으로 나눌 수 없습니다.");
-              return;
-            }
-            break;
-          default:
-            alert("잘못된 연산입니다.");
-            return;
-        }
-
-        let calculation = `${num1} ${operation} ${num2} = ${result}`;
-        history.push(calculation);
-        displayHistory();
-      }
-
-      function displayHistory() {
-        let historyOutput = document.getElementById("history");
-        historyOutput.innerHTML = "";
-        history.forEach((calc) => {
-          historyOutput.innerHTML += calc + "<br>";
-        });
-      }
-    </script>
+    <meta charset="UTF-8" />
+    <title>이름 및 나이 입력 프로그램</title>
   </head>
   <body>
-    <h3>계산기 프로그램</h3>
-    <hr />
-    <form onsubmit="event.preventDefault(); calculate();">
-      <label for="num1">첫 번째 숫자:</label>
-      <input type="number" id="num1" name="num1" /><br /><br />
-      <label for="num2">두 번째 숫자:</label>
-      <input type="number" id="num2" name="num2" /><br /><br />
-      <label for="operation">연산 (+, -, *, /):</label>
-      <input type="text" id="operation" name="operation" /><br /><br />
-      <button type="submit">계산</button>
+    <h1>이름 및 나이 입력 프로그램</h1>
+    <form id="nameAgeForm">
+      <button type="button" onclick="getNameAndAge()">이름 및 나이 입력</button>
     </form>
-    <h3>계산 기록</h3>
-    <div id="history"></div>
+
+    <p id="outputText"></p>
+
+    <script>
+      function getNameAndAge() {
+        const userName = prompt("이름을 입력하세요");
+        if (!userName) {
+          alert("이름을 입력해야 합니다.");
+          return;
+        }
+
+        const userAge = prompt("나이를 입력하세요");
+        if (!userAge || isNaN(userAge)) {
+          alert("유효한 나이를 입력해야 합니다.");
+          return;
+        }
+
+        const ageNumber = parseInt(userAge, 10);
+        const ageStatus = ageNumber >= 20 ? "성인" : "미성년자";
+
+        const outputText = document.getElementById("outputText");
+        outputText.textContent = `이름: ${userName}, 나이: ${userAge} (${ageStatus})`;
+      }
+    </script>
   </body>
 </html>

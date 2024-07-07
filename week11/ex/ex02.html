@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>getElementsByClassName Example</title>
+    <style>
+      .example {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="example">구문 1</p>
+    <p class="example">구문 2</p>
+    <button id="change-color">색상 변경</button>
+
+    <script>
+      document
+        .getElementById("change-color")
+        .addEventListener("click", function () {
+          let elements = document.getElementsByClassName("example");
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].style.backgroundColor = "lightblue";
+          }
+        });
+    </script>
+  </body>
+</html>

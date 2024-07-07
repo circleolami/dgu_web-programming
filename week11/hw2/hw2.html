@@ -1,19 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>제품 목록</title>
+    <meta charset="utf-8" />
+    <title>과일 종류</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+      hr {
+        border: none;
+        border-top: 2px solid #ccc;
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+      .hover-apple:hover {
+        background-color: #ff9999;
+      }
+      .hover-banana:hover {
+        background-color: #ffff99;
+      }
+      .hover-orange:hover {
+        background-color: #ffcc99;
+      }
+      .hover-grape:hover {
+        background-color: #cc99ff;
+      }
+      .hover-strawberry:hover {
+        background-color: #ff6699;
+      }
+      .hover-watermelon:hover {
+        background-color: #99ff99;
+      }
+      .hover-blueberry:hover {
+        background-color: #9999ff;
+      }
+    </style>
+    <script>
+      function addHoverEffect() {
+        let items = document.querySelectorAll("li");
+        items[0].classList.add("hover-apple");
+        items[1].classList.add("hover-banana");
+        items[2].classList.add("hover-orange");
+        items[3].classList.add("hover-grape");
+        items[4].classList.add("hover-strawberry");
+        items[5].classList.add("hover-watermelon");
+        items[6].classList.add("hover-blueberry");
+      }
+
+      window.onload = function () {
+        addHoverEffect();
+      };
+    </script>
   </head>
   <body>
-    <h1 id="title">사용 가능한 제품들</h1>
-    <input type="text" id="filter-input" placeholder="제품 이름으로 필터링" />
-    <ul id="product-list">
-      <li class="product">노트북</li>
-      <li class="product">스마트폰</li>
-      <li class="product">태블릿</li>
-      <li class="product">스마트워치</li>
-      <li class="product">헤드폰</li>
+    <h2>과일 종류</h2>
+    <hr />
+    <ul>
+      <li>사과</li>
+      <li>바나나</li>
+      <li>오렌지</li>
+      <li>포도</li>
+      <li>딸기</li>
+      <li>수박</li>
+      <li>블루베리</li>
     </ul>
-
-    <script src="hw2.js"></script>
   </body>
 </html>

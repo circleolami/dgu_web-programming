@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>마우스 오버 및 아웃 이벤트 예제</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid black;
+        transition: background-color 0.3s, color 0.3s;
+      }
+    </style>
+    <script>
+      function handleMouseOver(e) {
+        e.target.style.backgroundColor = "lightcoral";
+        e.target.style.color = "white";
+      }
+
+      function handleMouseOut(e) {
+        e.target.style.backgroundColor = "lightblue";
+        e.target.style.color = "black";
+      }
+    </script>
+  </head>
+  <body>
+    <h3>마우스 관련 이벤트 리스너 응용</h3>
+    <div
+      class="box"
+      onmouseover="handleMouseOver(event)"
+      onmouseout="handleMouseOut(event)"
+    >
+      마우스를 올리세요
+    </div>
+  </body>
+</html>

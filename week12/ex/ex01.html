@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>버튼 클릭 예제</title>
+    <script>
+      function getRandomIndex(max) {
+        return Math.floor(Math.random() * max);
+      }
+
+      function changeListItem() {
+        var items = document.querySelectorAll("li");
+        var randomIndex = getRandomIndex(items.length);
+        var dguItems = [
+          "동국대학교 서울캠퍼스",
+          "동국대학교 공과대학",
+          "동국대학교 AI융합학부",
+          "동국대학교 이과대학",
+          "동국대학교 법과대학",
+        ];
+        items[randomIndex].textContent = dguItems[randomIndex];
+      }
+    </script>
+  </head>
+  <body>
+    <h3>버튼을 클릭하여 무작위로 동국대학교 관련 항목을 변경하세요.</h3>
+    <button onclick="changeListItem()">항목 변경</button>
+    <ul>
+      <li>항목 1</li>
+      <li>항목 2</li>
+      <li>항목 3</li>
+      <li>항목 4</li>
+      <li>항목 5</li>
+    </ul>
+  </body>
+</html>

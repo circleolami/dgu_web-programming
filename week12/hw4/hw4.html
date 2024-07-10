@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
   <head>
-    <title>마우스 이벤트 실습</title>
-    <script>
-      function toggleImageSize() {
-        var img = document.getElementById("toggleImage");
-        if (img.style.width === "200px") {
-          img.style.width = "400px";
-          img.style.height = "400px";
-        } else {
-          img.style.width = "200px";
-          img.style.height = "200px";
-        }
-      }
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 크기 변경</title>
     <style>
-      #toggleImage {
+      img {
         width: 200px;
-        height: 200px;
-        transition: width 0.5s, height 0.5s;
+        transition: width 0.3s;
       }
     </style>
   </head>
   <body>
-    <h3>이미지를 클릭하면 크기가 변경됩니다.</h3>
-    <hr />
-    <img
-      id="toggleImage"
-      src="image.jpg"
-      alt="Image"
-      onclick="toggleImageSize()"
-    />
+    <h1>이미지를 클릭하면 크기가 변경됩니다.</h1>
+    <img id="toggleImage" src="./image.jpg" alt="Sample Image" />
+
+    <script>
+      const img = document.getElementById("toggleImage");
+      let isLarge = false;
+
+      img.addEventListener("click", function () {
+        if (isLarge) {
+          img.style.width = "200px";
+        } else {
+          img.style.width = "400px";
+        }
+        isLarge = !isLarge;
+      });
+    </script>
   </body>
 </html>
